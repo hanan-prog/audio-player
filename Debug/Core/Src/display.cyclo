@@ -1,0 +1,6 @@
+../Core/Src/display.c:21:5:display_init	2
+../Core/Src/display.c:37:5:display_update	1
+../Core/Src/display.c:45:6:display_move_selection	2
+../Core/Src/display.c:54:5:display_set_song	1
+../Core/Src/display.c:59:13:display_set_list	3
+../Core/Src/display.c:81:5:display_set_spectogram	1

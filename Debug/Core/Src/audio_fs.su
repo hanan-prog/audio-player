@@ -1,0 +1,6 @@
+../Core/Src/audio_fs.c:44:5:unmount_fs	8	static
+../Core/Src/audio_fs.c:47:5:init_fs	8	static
+../Core/Src/audio_fs.c:52:12:parse_headers	88	dynamic
+../Core/Src/audio_fs.c:124:12:parse_data	32	static
+../Core/Src/audio_fs.c:151:5:validate_wav_file	48	static
+../Core/Src/audio_fs.c:191:6:populate_songs	112	static

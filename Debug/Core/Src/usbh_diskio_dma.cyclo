@@ -1,0 +1,5 @@
+../Core/Src/usbh_diskio_dma.c:65:9:USBH_initialize	1
+../Core/Src/usbh_diskio_dma.c:77:9:USBH_status	2
+../Core/Src/usbh_diskio_dma.c:100:9:USBH_read	11
+../Core/Src/usbh_diskio_dma.c:162:9:USBH_write	12
+../Core/Src/usbh_diskio_dma.c:227:9:USBH_ioctl	8

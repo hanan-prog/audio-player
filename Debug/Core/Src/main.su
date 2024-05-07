@@ -1,0 +1,13 @@
+../Core/Src/main.c:62:5:main	8	static
+../Core/Src/main.c:95:13:TIMx_Config	8	static
+../Core/Src/main.c:150:13:USBH_init	8	static
+../Core/Src/main.c:170:13:USBH_UserProcess	16	static
+../Core/Src/main.c:187:13:LCD_Config	8	static
+../Core/Src/main.c:202:13:audio_player_application	8	static
+../Core/Src/main.c:244:16:explore_disk	72	static
+../Core/Src/main.c:257:13:Toggle_Leds	8	static
+../Core/Src/main.c:287:13:SystemClock_Config	88	static
+../Core/Src/main.c:323:6:TIM6_Config	16	static
+../Core/Src/main.c:348:6:HAL_GPIO_EXTI_Callback	16	static
+../Core/Src/main.c:361:6:HAL_TIM_PeriodElapsedCallback	16	static
+../Core/Src/main.c:372:6:Error_Handler	8	static

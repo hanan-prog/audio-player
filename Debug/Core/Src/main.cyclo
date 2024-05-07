@@ -1,0 +1,13 @@
+../Core/Src/main.c:62:5:main	2
+../Core/Src/main.c:95:13:TIMx_Config	3
+../Core/Src/main.c:150:13:USBH_init	3
+../Core/Src/main.c:170:13:USBH_UserProcess	4
+../Core/Src/main.c:187:13:LCD_Config	1
+../Core/Src/main.c:202:13:audio_player_application	7
+../Core/Src/main.c:244:16:explore_disk	2
+../Core/Src/main.c:257:13:Toggle_Leds	2
+../Core/Src/main.c:287:13:SystemClock_Config	1
+../Core/Src/main.c:323:6:TIM6_Config	1
+../Core/Src/main.c:348:6:HAL_GPIO_EXTI_Callback	2
+../Core/Src/main.c:361:6:HAL_TIM_PeriodElapsedCallback	1
+../Core/Src/main.c:372:6:Error_Handler	1

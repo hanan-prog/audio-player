@@ -1,0 +1,7 @@
+../Utilities/Log/lcd_log.c:122:6:LCD_LOG_Init	1
+../Utilities/Log/lcd_log.c:136:6:LCD_LOG_DeInit	1
+../Utilities/Log/lcd_log.c:158:6:LCD_LOG_SetHeader	1
+../Utilities/Log/lcd_log.c:182:6:LCD_LOG_SetFooter	1
+../Utilities/Log/lcd_log.c:206:6:LCD_LOG_ClearTextZone	2
+../Utilities/Log/lcd_log.c:224:1:__io_putchar	11
+../Utilities/Log/lcd_log.c:300:6:LCD_LOG_UpdateDisplay	5
