@@ -28,7 +28,7 @@
 
 #include "stm32f429i_discovery.h"
 #include "stm32f429i_discovery_lcd.h"
-#include <stdlib.h>
+#include "stdlib.h"
 
 /* FatFs includes component */
 #include "ff_gen_drv.h"
@@ -36,7 +36,8 @@
 #include "../../Drivers/CMSIS/DSP/Include/arm_math.h"
 #include  "../../Utilities/Log/lcd_log.h"
 
-
+#include "display.h"
+#include "audio_fs.h"
 
 /* USER CODE END EM */
 //
