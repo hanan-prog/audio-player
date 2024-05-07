@@ -53,12 +53,13 @@
 #define PLAY_TIME_END_Y (PLAY_TIME_START_Y + PLAY_TIME_FONT)
 
 
-int display_init(void);
+int display_init(song_list_t *curr_songs, size_t ls_len);
 
-int display_loop(void);
-int display_move_selection(int direction);
+int display_update(void);
+void display_move_selection(void);
+
 int display_set_song(const song_t *song);
-void display_set_list(song_list_t *curr_songs, size_t ls_len);
+
 int display_set_spectogram(uint32_t spectogram[DISPLAY_NUM_OF_SPECTOGRAM_BARS], uint32_t max_value);
 
 #endif // DISPLAY_H

@@ -35,7 +35,7 @@
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 extern HCD_HandleTypeDef hhcd;
-
+extern TIM_HandleTypeDef    TimHandle;
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
 
@@ -162,6 +162,13 @@ void OTG_HS_IRQHandler(void)
   HAL_HCD_IRQHandler(&hhcd);
 }
 
+void EXTI0_IRQHandler(void) {
+  HAL_GPIO_EXTI_IRQHandler(KEY_BUTTON_PIN);
+}
+
+void TIMx_IRQHandler(void) {
+  HAL_TIM_IRQHandler(&TimHandle);
+}
 /**
   * @}
   */

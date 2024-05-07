@@ -11,38 +11,43 @@ static enum {
 } display_state;
 
 
-int display_init(void) {
+static song_list_t *curr_song_ls;
+static size_t song_ls_len;
+static size_t curr_song;
+
+
+static void display_set_list(song_list_t *curr_songs, size_t ls_len);
+
+int display_init(song_list_t *curr_songs, size_t ls_len) {
 	if (display_state != DISPLAY_NOT_INITIALIZED) {
 		// only allow initialization once
 		return -1;
 	}
 
-	BSP_LCD_Init();
-	BSP_LCD_LayerDefaultInit(LCD_FOREGROUND_LAYER, (LCD_FRAME_BUFFER + BUFFER_OFFSET));
-	BSP_LCD_SetTransparency(LCD_BACKGROUND_LAYER, 0);
-	BSP_LCD_SelectLayer(LCD_FOREGROUND_LAYER);
-
-	BSP_LCD_Clear(LCD_COLOR_BLACK);
-
-	/* LCD Log initialization */
-	LCD_LOG_Init();
-
-	LCD_LOG_SetHeader((uint8_t *)"LETS GO BITCH");
-	LCD_UsrLog("> USB Host library started.\n");
-	LCD_LOG_SetFooter ((uint8_t *)"     USB Host Library V3.2.0" );
+	curr_song_ls = curr_songs;
+	song_ls_len = ls_len;
+	curr_song = 0;
 	display_state = DISPLAY_INITIALIZED;
-	
+	display_set_list(curr_song_ls, song_ls_len);
+
   return 0;
 }
 
 
-int display_loop(void) {
-  return 0;
+int display_update(void) {
+	display_set_list(curr_song_ls, song_ls_len);
+//	LCD_LOG_Init();		// resetting the display
+//	LCD_LOG_SetHeader((uint8_t *)"Update just dropped");
+	return 0;
 }
 
 
-int display_move_selection(int direction) {
-  return 0;
+void display_move_selection(void) {
+	curr_song++;
+
+	if (curr_song > 2) {
+		curr_song = 0;
+	}
 }
 
 
@@ -51,11 +56,17 @@ int display_set_song(const song_t *song) {
 }
 
 
-void display_set_list(song_list_t *curr_songs, size_t ls_len) {
-
+static void display_set_list(song_list_t *curr_songs, size_t ls_len) {
+	char tmp[(SONGS_MAX_STRING_LENGTH * 2) + 3]; // "artist" + " - " + "title"
 	BSP_LCD_SetFont(LIST_FONT);
 	for (int i = 0; i < ls_len; ++i) {
-		char tmp[(SONGS_MAX_STRING_LENGTH * 2) + 3]; // "artist" + " - " + "title"
+		if (i == curr_song) {
+			BSP_LCD_SetTextColor(LCD_COLOR_BLACK);
+			BSP_LCD_SetBackColor(LCD_COLOR_WHITE);
+		} else {
+			BSP_LCD_SetTextColor(LCD_COLOR_WHITE);
+			BSP_LCD_SetBackColor(LCD_COLOR_BLACK);
+		}
 		snprintf(tmp, sizeof(tmp), "%s - %s", curr_songs->songs[i].artist, curr_songs->songs[i].name);
 		strcat(tmp, "\n");
 		LCD_UsrLog(tmp);

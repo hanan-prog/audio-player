@@ -243,5 +243,12 @@ void Error_Handler(void);
 #define DAC1_CHANNEL1                    DAC_CHANNEL_1
 
 
+#define TIMx                           TIM3
+#define TIMx_CLK_ENABLE                __HAL_RCC_TIM3_CLK_ENABLE
+
+/* Definition for TIMx's NVIC */
+#define TIMx_IRQn                      TIM3_IRQn
+#define TIMx_IRQHandler                TIM3_IRQHandler
+
 
 #endif /* __MAIN_H */
