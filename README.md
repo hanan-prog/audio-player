@@ -5,5 +5,7 @@ Code only runs on the STM32CubeIDE
 
 # TODO 
 code works with VsCode 
+
+
 display spectogram of audio as it is played
 
